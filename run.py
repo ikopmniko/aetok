@@ -103,7 +103,8 @@ def run_bot(data_account, recover=1):
         time.sleep(9)
         
 
-        driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div/div[1]/div[1]/form/div[16]/div/a').click()
+        driver.find_element(By.CSS_SELECTOR,'a[href="#DescriptionModal"]').click()
+    
         time.sleep(5)
 
 
