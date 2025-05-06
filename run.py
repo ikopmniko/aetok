@@ -101,7 +101,9 @@ def run_bot(data_account, recover=1):
 
         driver.find_element(By.CSS_SELECTOR, 'input[type="submit"]').click()
         time.sleep(9)
-        
+
+        driver.execute_script("document.getElementById('zone16-DesktopSticky').style.display = 'none';")
+
 
         driver.find_element(By.CSS_SELECTOR,'a[href="#DescriptionModal"]').click()
     
