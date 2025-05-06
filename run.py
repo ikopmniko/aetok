@@ -107,24 +107,13 @@ def run_bot(data_account, recover=1):
         time.sleep(5)
 
 
-        iframe = driver.find_element(By.ID, "profiledescription_ifr")
-
-        # Pindah ke dalam iframe
-        driver.switch_to.frame(iframe)
-
-        konten = f'''
-        {judul}<br><br> LINK ⏩⏩  <a href="https://clipsfans.com/{username}&ref=aet">https://clipsfans.com/{username}</a> 
-    '''
-
-
-
-      
-        driver.execute_script("document.querySelector('#tinymce').innerHTML = arguments[0];", konten)
+     
+        driver.execute_script("tinymce.activeEditor.setContent(arguments[0]);", f'{judul}<br><br> LINK ⏩⏩ <a href="https://clipsfans.com/{username}&ref=aet">https://clipsfans.com/{username}</a>')
 
 
         time.sleep(4)
 
-        driver.switch_to.default_content()
+    
         
 
         driver.find_element(By.CSS_SELECTOR, '#descriptionSubmit').click()
